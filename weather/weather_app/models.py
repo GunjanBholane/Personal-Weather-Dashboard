@@ -74,3 +74,16 @@ class MyUser(AbstractBaseUser):
         "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
         return self.is_admin
+
+   from django.db import models
+
+class Weather(models.Model):
+    city = models.CharField(max_length=100)
+    temperature = models.FloatField()
+    description = models.CharField(max_length=255)
+    humidity = models.IntegerField()
+    wind_speed = models.FloatField()
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.city} - {self.date.strftime('%Y-%m-%d %H:%M')}"
