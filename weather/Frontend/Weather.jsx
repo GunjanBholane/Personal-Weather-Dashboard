@@ -31,7 +31,7 @@ export default function Weather() {
     setWeather(null);
 
     try {
-      const apiKey = '1895f917350c93f9b2eea498b4ba6e0d';
+      const apiKey = 'paste your key here';
       let url = '';
 
       const latNum = parseFloat(inputLat);
