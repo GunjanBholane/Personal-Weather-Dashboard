@@ -1,48 +1,171 @@
-# 🌦️ Personal Weather Dashboard
-
-A Django-based app where users can register, log in using JWT, set their location, and view real-time weather using the OpenWeatherMap API.
 
 ---
 
-## ✅ Features
+```markdown
+# 🌦️ Weather App
 
-- User registration & login (JWT-based)
-- Update location (city + country)
-- View current weather (temperature, humidity, condition)
-- Protected API endpoints
+This is a full-stack web application built using **React** for the frontend and **Django** for the backend. The app allows users to register, log in, and view weather information for a given city.
 
 ---
 
-## ⚙️ Setup<img width="1037" height="573" alt="image" src="https://github.com/user-attachments/assets/251edb18-a7f1-4084-b95c-23b30af605bd" />
+## 🚀 Features
 
+- User Registration & Login (JWT-based authentication)
+- Password reset via email
+- View current weather after login
+- Custom user model using email as username
+- React frontend with routing for Register, Login, Profile, and Weather components
+- Backend API built with Django REST Framework
 
-git clone https://github.com/gunjanbholane/personal-weather-dashboard.git
-cd personal-weather-dashboard
+---
+
+## 📁 Project Structure
+
+```
+
+weather/
+├── Frontend/          # React frontend (App.jsx, Weather.jsx, etc.)
+├── weather/           # Django project (settings.py, urls.py)
+├── weather\_app/       # Django app (models.py, views.py, serializers.py)
+
+````
+
+---
+
+## ⚙️ Setup Instructions
+
+### 🔹 Backend (Django)
+
+1. **Create and activate a virtual environment:**
+
+```bash
 python -m venv venv
-source venv/bin/activate      # Windows: venv\Scripts\activate
+source venv/bin/activate    # On Windows: venv\Scripts\activate
+````
+
+2. **Install requirements:**
+
+```bash
 pip install -r requirements.txt
+```
+
+3. **Create a `.env` file** in the root folder and add:
+
+```
+DJANGO_SECRET_KEY=your-secret-key
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-email-password
+EMAIL_FROM=your-email@gmail.com
+```
+
+> ⚠️ Do NOT commit your `.env` file to GitHub!
+
+4. **Run database migrations:**
+
+```bash
 python manage.py migrate
+```
+
+5. **Create a superuser (optional):**
+
+```bash
+python manage.py createsuperuser
+```
+
+6. **Run the Django server:**
+
+```bash
 python manage.py runserver
+```
 
-Test with Postman
-Register: POST /api/register/
+---
 
-Login: POST /api/token/ → Get JWT token
+### 🔹 Frontend (React)
 
-Update Location: PUT /api/update-location/ (Auth required)
+1. Navigate to the `Frontend` directory:
 
-View Weather: GET /api/weather/ (Auth required)
+```bash
+cd Frontend
+```
 
-Use Authorization header:
-Bearer <access_token>
+2. Install dependencies:
 
- Sample Credentials
+```bash
+npm install
+```
 
-{
-  "email": "testuser@example.com",
-  "password": "strongpassword123"
-}
- Notes
-JWT token expires in 1 hour
+3. Start the React dev server:
 
-Passwords are securely hashed (bcrypt)
+```bash
+npm start
+```
+
+> The React app will run on `http://localhost:3000` and Django backend on `http://127.0.0.1:8000`.
+
+---
+
+## 🧪 How to Test
+
+1. **Register a new user** using the Register page (`/register`)
+2. **Login** using the Login page (`/login`)
+3. On successful login, you'll be redirected to `/weather`
+4. Enter your city name to view current weather details
+5. Test password reset by entering your email on `/send-reset-password-email/`
+
+---
+
+## 🧾 Sample User Credentials
+
+You can use the following sample credentials to test:
+
+```
+Email: testuser@gmail.com
+Password: TestUser@123
+```
+
+> You can also create your own users through the Register page.
+
+---
+
+## 📦 requirements.txt (Backend)
+
+```
+Django>=5.2
+djangorestframework
+python-dotenv
+djangorestframework-simplejwt
+corsheaders
+```
+
+> You can generate it using:
+
+```bash
+pip freeze > requirements.txt
+```
+
+---
+
+## 📌 Notes
+
+* JWT tokens are used for user authentication.
+* Frontend and backend communicate over REST APIs.
+* All API routes are prefixed with `/api/user/`.
+
+---
+
+## 📷 Screenshots
+
+(Add screenshots here if you'd like)
+
+---
+
+## 🛡️ License
+
+This project is licensed under the MIT License.
+
+```
+
+---
+
+Let me know if you want this in a file or want me to auto-generate the `.env.example` and `requirements.txt` too.
+```
