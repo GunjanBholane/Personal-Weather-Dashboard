@@ -13,7 +13,8 @@ A Django-based app where users can register, log in using JWT, set their locatio
 
 ---
 
-## ⚙️ Setup
+## ⚙️ Setup<img width="1037" height="573" alt="image" src="https://github.com/user-attachments/assets/251edb18-a7f1-4084-b95c-23b30af605bd" />
+
 
 git clone https://github.com/gunjanbholane/personal-weather-dashboard.git
 cd personal-weather-dashboard
