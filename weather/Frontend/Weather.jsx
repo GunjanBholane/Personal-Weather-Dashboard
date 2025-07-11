@@ -28,7 +28,7 @@
 //     setWeather(null);
 
 //     try {
-//       const apiKey = '1895f917350c93f9b2eea498b4ba6e0d'; // ← Replace with your key
+//       const apiKey = 'paste your key'; // ← Replace with your key
 //       let url = '';
 
 //       const latNum = parseFloat(inputLat);
@@ -37,9 +37,9 @@
 //       const hasCity = inputCity?.trim() !== '';
 
 //       if (hasCity) {
-//         url = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&appid=${apiKey}&units=metric`;
+//         url = `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&appid=${api}&units=metric`;
 //       } else if (hasValidCoords) {
-//         url = `https://api.openweathermap.org/data/2.5/weather?lat=${latNum}&lon=${lonNum}&appid=${apiKey}&units=metric`;
+//         url = `https://api.openweathermap.org/data/2.5/weather?lat=${latNum}&lon=${lonNum}&appid=${api}&units=metric`;
 //       } else {
 //         setError('Please enter a city or valid coordinates.');
 //         return;
