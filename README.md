@@ -28,7 +28,7 @@ weather/
 
 ### 1. Create & Activate Virtual Environment
 
-```bash
+
 python -m venv venv
 # On Windows:
 venv\Scripts\activate
